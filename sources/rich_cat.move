@@ -197,4 +197,10 @@ module advanced_nft:: rich_cat{
         }
     }
 
+    entry fun update_version(
+        config: &mut GlobalConfig,
+    ){
+        config.version = VERSION;
+    }
+
 }
