@@ -4,7 +4,7 @@ module advanced_nft:: rich_cat{
     use sui::object::{Self, UID};
     use sui::tx_context::{Self, TxContext};
     use sui::clock::{Self ,Clock,};
-    use sui::package::{Self};
+    use sui::package::{Self, Publisher};
     use sui::sui::SUI;
     use std::string::{Self,String};
     use sui::display::{Self,Display};
@@ -96,6 +96,7 @@ module advanced_nft:: rich_cat{
     }
 
     entry fun create_and_set_auction_param(
+        _publisher: &Publisher,
         config: &GlobalConfig,
         start_time: u64,
         end_time: u64,
@@ -161,6 +162,7 @@ module advanced_nft:: rich_cat{
     }
 
     entry fun open_blind_box(
+        _publisher: &Publisher,
         config: &mut GlobalConfig,
         metadata: &mut Display<RichCatNFT>,
     ){
